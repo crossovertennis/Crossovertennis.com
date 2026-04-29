@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lance C. Johnson. Elite tennis coaching, serve and movement specialist, mental performance. Richard Williams development program. Venus and Serena Williams. Bay Area, California.">
+<meta name="theme-color" content="#080806">
+<title>Crossover Tennis — Lance C. Johnson</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#080806;color:#f5f1e8;font-family:'Outfit',sans-serif;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5rem;background:rgba(8,8,6,0.94);backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,168,76,0.08)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;letter-spacing:.07em;text-decoration:none;color:#f5f1e8}
+.nav-logo span{color:#c9a84c}
+.nl{display:flex;align-items:center;gap:2rem}
+.nl a{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,241,232,0.45);text-decoration:none;transition:color .2s}
+.nl a:hover{color:#f5f1e8}
+.ncta{padding:.45rem 1.3rem;background:#c9a84c;color:#080806;border:none;border-radius:1px;font-family:'Outfit',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-block}
+.ncta:hover{background:#e8c870;transform:translateY(-1px)}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hbg span{width:22px;height:1.5px;background:#f5f1e8;display:block}
+.mnav{position:fixed;inset:0;background:#080806;z-index:490;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mnav.open{transform:translateX(0)}
+.mnav a{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#f5f1e8;text-decoration:none}
+.mnav a:hover{color:#c9a84c}
+.mnav-x{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:#f5f1e8;font-size:1.3rem;cursor:pointer}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 5rem;position:relative}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 50% 35%,rgba(201,168,76,0.04),transparent 60%)}
+.hero-watermark{position:absolute;top:50%;right:8%;transform:translateY(-55%);font-family:'Cormorant Garamond',serif;font-size:clamp(14rem,22vw,20rem);font-weight:300;font-style:italic;color:rgba(201,168,76,0.06);letter-spacing:.02em;pointer-events:none;line-height:.85;user-select:none}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.25em;color:#c9a84c;margin-bottom:1.8rem;display:flex;align-items:center;gap:.8rem;opacity:0;animation:fu .8s ease .2s forwards;position:relative}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,6.5rem);font-weight:300;line-height:.92;max-width:700px;margin-bottom:1.8rem;opacity:0;animation:fu .8s ease .4s forwards;position:relative}
+.hero h1 em{font-style:italic;color:#c9a84c}
+.hero-sub{font-size:.95rem;color:rgba(245,241,232,0.5);line-height:1.85;max-width:440px;margin-bottom:2.5rem;opacity:0;animation:fu .8s ease .6s forwards;position:relative}
+.hero-cta{opacity:0;animation:fu .8s ease .8s forwards;position:relative}
+.btn{padding:.85rem 2.2rem;background:#c9a84c;color:#080806;border:none;border-radius:1px;font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .25s;display:inline-block}
+.btn:hover{background:#e8c870;transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.3)}
+.mq{padding:.85rem 0;border-top:1px solid rgba(201,168,76,0.25);border-bottom:1px solid rgba(201,168,76,0.25);overflow:hidden;background:rgba(201,168,76,0.03)}
+.mq-t{display:flex;gap:3rem;width:max-content;animation:mq 30s linear infinite}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-i{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;color:rgba(245,241,232,0.55);text-transform:uppercase;white-space:nowrap}
+.mq-i em{color:rgba(201,168,76,0.7);font-style:normal;margin:0 .6rem}
+.featured{padding:4rem 5rem;text-align:center}
+.featured-label{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;color:rgba(245,241,232,0.4);margin-bottom:2rem}
+.featured-logos{display:flex;align-items:center;justify-content:center;gap:3.5rem;flex-wrap:wrap}
+.featured-logo{font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.08em;color:rgba(245,241,232,0.55);font-weight:500}
+.intro{padding:7rem 5rem;background:#0f0f0c}
+.intro-g{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center}
+.intro-img{position:relative;aspect-ratio:3/4;overflow:hidden;border:1px solid rgba(201,168,76,0.12)}
+.intro-img img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.intro-label{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;color:#c9a84c;margin-bottom:.8rem;display:flex;align-items:center;gap:.7rem}
+.intro-label::before{content:'';width:20px;height:1px;background:#c9a84c}
+.intro-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;line-height:1.1;margin-bottom:1.5rem}
+.intro-title em{font-style:italic;color:#c9a84c}
+.intro-body{font-size:.88rem;color:rgba(245,241,232,0.5);line-height:1.88;margin-bottom:1.2rem}
+.intro-body strong{color:rgba(245,241,232,0.82);font-weight:500}
+.intro-link{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;color:#c9a84c;text-decoration:none;transition:opacity .2s}
+.intro-link:hover{opacity:.7}
+.quote-s{padding:6rem 5rem;text-align:center;position:relative}
+.quote-s::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 40% 50% at 50% 50%,rgba(201,168,76,0.03),transparent 60%)}
+.quote-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:300;font-style:italic;line-height:1.55;max-width:600px;margin:0 auto 1rem;color:rgba(245,241,232,0.85);position:relative}
+.quote-text em{color:#c9a84c;font-style:normal}
+.quote-attr{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.12em;color:rgba(201,168,76,0.6)}
+.offers{padding:7rem 5rem;background:#0f0f0c}
+.offers-label{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;color:#c9a84c;text-align:center;margin-bottom:.8rem}
+.offers-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;text-align:center;margin-bottom:3.5rem}
+.offers-title em{font-style:italic;color:#c9a84c}
+.offers-g{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(201,168,76,0.08)}
+.offer-c{background:#0f0f0c;padding:2.5rem 2.2rem;transition:background .3s;position:relative;overflow:hidden}
+.offer-c::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#c9a84c;transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.offer-c:hover{background:rgba(201,168,76,0.03)}.offer-c:hover::before{transform:scaleX(1)}
+.offer-icon{font-size:1.6rem;margin-bottom:.9rem}
+.offer-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;margin-bottom:.5rem}
+.offer-desc{font-size:.76rem;color:rgba(245,241,232,0.45);line-height:1.72;margin-bottom:1rem}
+.offer-link{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.08em;color:#c9a84c;text-decoration:none;transition:opacity .2s}
+.offer-link:hover{opacity:.7}
+.tech{padding:4rem 5rem;border-top:1px solid rgba(201,168,76,0.06);border-bottom:1px solid rgba(201,168,76,0.06);background:rgba(201,168,76,0.015)}
+.tech-inner{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.tech-label{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.15em;color:rgba(245,241,232,0.3);flex-shrink:0}
+.tech-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.tech-item{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.06em;color:rgba(201,168,76,0.7);padding:.35rem .8rem;border:1px solid rgba(201,168,76,0.25)}
+.tech-soon{font-size:.4rem;letter-spacing:.06em;color:rgba(245,241,232,0.35);display:block;margin-top:.15rem}
+.cta{padding:8rem 5rem;text-align:center;background:#0f0f0c;position:relative}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 40% 45% at 50% 40%,rgba(201,168,76,0.04),transparent 60%)}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.1;margin-bottom:1rem;position:relative}
+.cta-title em{font-style:italic;color:#c9a84c}
+.cta-sub{font-size:.88rem;color:rgba(245,241,232,0.45);line-height:1.8;max-width:420px;margin:0 auto 2.5rem;position:relative}
+.cta-btn{position:relative}
+.cta-contact{margin-top:2.5rem;position:relative}
